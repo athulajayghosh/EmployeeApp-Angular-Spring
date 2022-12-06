@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<h1 class="display-4 text-center mt-3 ">Welcome {{data.name}}</h1> 
+<table class="table table-striped-columns">
+    <tbody>
+    <tr>
+    <th scope="col">Emp Code</th>
+    <th scope="col">Employee Name</th>
+    <th scope="col">Designation</th>
+    <th scope="col">Salary</th>
+    <th scope="col">Company Name</th>
+    <th scope="col">Mobile</th>
+    <th scope="col">Username</th>
+    <th scope="col">password</th>
+    </tr>
+   
+   
+   
+    <tr *ngFor="let i of data">
+    <td>{{i.empcode}}</td>    
+    <td>{{i.empname}}</td>
+    <td>{{i.designation}}</td>
+    <td>{{i.salary}}</td>
+    <td>{{i.companyname}}</td>
+    <td>{{i.mobile}}</td>
+    <td>{{i.username}}</td>
+    <td>{{i.password}}</td>
+    </tr>
+    
+    </tbody>
+    </table>
