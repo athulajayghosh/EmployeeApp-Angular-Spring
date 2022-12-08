@@ -1,4 +1,6 @@
+import { identifierName } from '@angular/compiler';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -9,13 +11,13 @@ import { ApiService } from '../api.service';
 export class SearchEmpComponent {
   empcode=""
   searchData:any=[]
-  constructor(private api:ApiService){
+  constructor(private api:ApiService , private route:Router){
 
   }
   readvalue=()=>{
-    let data={"empcode" : this.empcode}
-    console.log(data)
-    this.api.searchEmp(data).subscribe(
+    let data1={"empcode" : this.empcode}
+    console.log(data1)
+    this.api.searchEmp(data1).subscribe(
       (response:any)=>{
         console.log(response)
         if (response.length == 0) {
@@ -26,8 +28,25 @@ export class SearchEmpComponent {
           
         }
       }
-    )  }
+    ) 
+  }
+  deletebtn=(id:any)=> {
+    let data:any={ "id":id}
+    this.api.deleteEmp(data).subscribe(
+      (response:any)=>{
+        console.log(response)
+        if (response.status == "success") {
+          alert("Employee deleted Successfully")
+          this.route.navigate(['/'])
 
+        } else {
+          alert("Invalid")
+        }
+  }
+  )
+}
+
+   
 
 
 
