@@ -33,6 +33,15 @@ export class AddEmpComponent {
       (response)=>{
       console.log(response)
       alert("Employee Added")
+      this.empcode=""
+      this.empname=""
+      this.designation=""
+      this.salary=""
+      this.companyname=""
+      this.mobile=""
+      this.username=""
+      this.password=""
+      
     }
   )  
 
