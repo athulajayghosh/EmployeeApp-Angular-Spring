@@ -32,7 +32,7 @@ export class AddEmpComponent {
       this.api.addEmp(data).subscribe(
       (response)=>{
       console.log(response)
-      alert("Data Added")
+      alert("Employee Added")
     }
   )  
 
